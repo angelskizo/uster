@@ -17,15 +17,12 @@ El software esta realizado en local con Symfony, usa BBDD MySQL y lleva bootstra
 Paja instalar y ejecutar el proyecto he usado el servidor apache y las bases de datos MySQL con XAMPP. Para hacer funcionar la app debemos ir al PHPMyAdmin de XAMPP introducir las siguientes consultas en la consola para tener preparada la base de datos de la aplicación:
 
 create database uster;
+use uster;
 create table vehicles ( id int auto_increment, brand varchar(50), model varchar(50), plate varchar(20), license_required varchar(1), PRIMARY KEY(id));
 create table drivers (id int AUTO_INCREMENT, name varchar(50), surname varchar(50), license varchar(1), primary key(id));
 create table trip (id int AUTO_INCREMENT, vehicle int, driver int, `date` date, primary key(id), FOREIGN KEY(vehicle) REFERENCES vehicles(id) on delete cascade, FOREIGN KEY(driver) references drivers(id) on delete cascade);
 
-Una vez creada la base de datos vamos a la carpeta "PruebaHiberus" y en la terminal escribimos:
-
-"php -S localhost:8000 -t public/"
-
-Con esto ya tendremos el proyecto montado en la dirección localhost:8000/. Tendremos que escribir en nuestro navegador localhost:8000/home para acceder a la página principal de la aplicación.
+Una vez creada la base de datos debemos montar el directorio "public" en localhost para acceder con la dirección tipo localhost. La página principal de la app está en el path /home en este caso en localhost/home.
 
 
 3-Estructura interna y de archivos
