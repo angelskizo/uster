@@ -1,10 +1,15 @@
 El gestor de vehiculos y conductores Uster es una aplicación creada con Symfony. No he podido terminar la aplicación en su totalidad pero hasta su estado actual es hasta donde he podido llegar y vamos a ver ahora como está y que le faltaría por desarrollar.
 
 INDICE
+
 1-Características Técnicas
+
 2-Instalación y ejecución
+
 3-Página Principal
+
 4-Páginas Segundarias
+
 5-Observaciones Finales
 
 
