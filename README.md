@@ -14,6 +14,7 @@ INDICE
 
 
 1-Características Técnicas
+
 El software esta realizado en local con Symfony, usa BBDD MySQL y lleva bootstrap para que la parte visual se vea decente.
 
 
@@ -22,9 +23,13 @@ El software esta realizado en local con Symfony, usa BBDD MySQL y lleva bootstra
 Paja instalar y ejecutar el proyecto he usado el servidor apache y las bases de datos MySQL con XAMPP. Para hacer funcionar la app debemos ir al PHPMyAdmin de XAMPP introducir las siguientes consultas en la consola para tener preparada la base de datos de la aplicación:
 
 create database uster;
+
 use uster;
+
 create table vehicles ( id int auto_increment, brand varchar(50), model varchar(50), plate varchar(20), license_required varchar(1), PRIMARY KEY(id));
+
 create table drivers (id int AUTO_INCREMENT, name varchar(50), surname varchar(50), license varchar(1), primary key(id));
+
 create table trip (id int AUTO_INCREMENT, vehicle int, driver int, `date` date, primary key(id), FOREIGN KEY(vehicle) REFERENCES vehicles(id) on delete cascade, FOREIGN KEY(driver) references drivers(id) on delete cascade);
 
 Una vez creada la base de datos debemos montar el directorio "public" en localhost para acceder con la dirección tipo localhost. La página principal de la app está en el path /home en este caso en localhost/home.
@@ -33,14 +38,23 @@ Una vez creada la base de datos debemos montar el directorio "public" en localho
 3-Estructura interna y de archivos
 
 Entidades
+
 La aplicación tiene en la ruta carpetaproyecto/src/Entity los archivos de las 3 clases principales de la app: Drivers, Vehicles y Trip.
+
 Controladores
+
 En carpetaproyecto/src/Controller podemos ver todos los controladores donde llamamos a las vistas, hacemos las consultas a BBDD y demás funciones.
+
 Formularios
+
 Los formularios usados en la aplicación estan en la ruta carpetaproyecto/src/Form, tienen nombres descriptivos y se puede ver como son llamados en la función de edit y de new en cada controlador de cada entidad.
+
 Vistas
+
 En carpetaproyecto/templates podremos encontrar las vistas de cada controlador de la App respectivamente además de la vista de la página principal(home). Las vistas de las entidades incluyen un archivo que muestra el listado y otro que llama al formulario para añadir/editar elementos.
+
 Rutas
+
 Por último está en carpetaproyecto/config/routes.yaml el archivo donde asignamos las rutas de la web al controlador correspondiente.
 
 
