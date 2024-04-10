@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New/Edit Vehicle{% endblock %}
+
+{% block body %}
+<div><h1>New/Edit Vehicle</h1></div>
+{{ form_start(vehicleForm) }}
+{{ form_widget(vehicleForm) }}
+{{ form_end(vehicleForm) }}
+
+{% endblock %}

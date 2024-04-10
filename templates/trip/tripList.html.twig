@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Trip List{% endblock %}
+{% block actr %} active" aria-current="page"{% endblock %}
+{% block body %}
+<div><h1>Trip</h1></div>
+<a href="/trip/new">Add New</a>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Vehicle</th>
+            <th>Driver</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    {%for trip in trips %}
+        <tr>
+            <th>{{trip.id}}</th>
+            <th>{{trip.vehicle.brand}} {{trip.vehicle.model}}</th>
+            <th>{{trip.driver.name}} {{trip.driver.surname}}</th>
+            <th>
+                <a href="#">Edit</a>
+                <a href="{{ path('deleteTrip',{'id':trip.id}) }}">Delete</a>
+            </th>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

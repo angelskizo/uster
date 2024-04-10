@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New/Edit Driver{% endblock %}
+
+{% block body %}
+<div><h1>New/Edit Driver</h1></div>
+{{ form_start(driverForm) }}
+{{ form_widget(driverForm) }}
+{{ form_end(driverForm) }}
+
+{% endblock %}

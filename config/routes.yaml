@@ -1,0 +1,54 @@
+controllers:
+    resource: ../src/Controller/
+    type: attribute
+
+home:
+    path: /home
+    controller: App\Controller\HomeController::home
+
+vehicleList:
+    path: /vehicles
+    controller: App\Controller\VehiclesController::vehicleList
+
+newVehicle:
+    path: /vehicles/new
+    controller: App\Controller\VehiclesController::newVehicle
+
+deleteVehicle:
+    path: /vehicles/delete/{id}
+    controller: App\Controller\VehiclesController::deleteVehicle
+
+updateVehicle:
+    path: /vehicles/update/{id}
+    controller: App\Controller\VehiclesController::updateVehicle
+
+driverList:
+    path: /drivers
+    controller: App\Controller\DriversController::driverList
+
+newDriver:
+    path: /drivers/new
+    controller: App\Controller\DriversController::newDriver
+
+deleteDriver:
+    path: /drivers/delete/{id}
+    controller: App\Controller\DriversController::deleteDriver
+
+updateDriver:
+    path: /drivers/update/{id}
+    controller: App\Controller\DriversController::updateDriver
+
+tripList:
+    path: /trip
+    controller: App\Controller\TripController::tripList
+
+deleteTrip:
+    path: /trip/delete/{id}
+    controller: App\Controller\TripController::deleteTrip
+
+newTrip:
+    path: /trip/new
+    controller: App\Controller\TripController::newTrip
+
+
+

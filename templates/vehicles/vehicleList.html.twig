@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Vehicles List{% endblock %}
+{% block acve %} active" aria-current="page"{% endblock %}
+{% block body %}
+<div><h1>Vehicles</h1></div>
+<a href="/vehicles/new">Add New</a>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Brand</th>
+            <th>Model</th>
+            <th>Plate</th>
+            <th>License</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    {%for vehicle in vehicles%}
+        <tr>
+            <th>{{vehicle.id}}</th>
+            <th>{{vehicle.brand}}</th>
+            <th>{{vehicle.model}}</th>
+            <th>{{vehicle.plate}}</th>
+            <th>{{vehicle.licenseRequired}}</th>
+            <th>
+                <a href="{{ path('updateVehicle',{'id':vehicle.id}) }}">Edit</a>
+                <a href="{{ path('deleteVehicle',{'id':vehicle.id}) }}">Delete</a>
+            </th>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

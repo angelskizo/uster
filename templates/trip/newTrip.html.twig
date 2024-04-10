@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New/Edit Trip{% endblock %}
+
+{% block body %}
+<div><h1>New/Edit Trip</h1></div>
+{{ form_start(tripForm) }}
+{{ form_widget(tripForm) }}
+{{ form_end(tripForm) }}
+
+{% endblock %}
